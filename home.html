@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Love</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="imgs/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Custom CSS Style Sheet -->
+  <link href="css/main.css" rel="stylesheet">   
+
+</head>
+<body>
+
+    <!-- =============== S I D E B A R =============== -->
+    <div class="sidebar">
+        <div class="navigation" data-auto-id="nav-sidebar">
+            <a data-auto-id="link-to-home" href="./home.html" class="active">Home</a>
+            <nav class="navigation-bottom">
+                <ul class="navigation-items">
+                    <li>
+                        <a data-auto-id="link-to-general" href="/pages/general" class="">General Info</a>
+                    </li>
+                    <li>
+                        <a data-auto-id="link-to-photos" href="/pages/photos" class="">Photos</a>
+                    </li>
+                    <li>
+                        <a data-auto-id="link-to-text" href="/pages/texts" class="">Firsts Text</a>
+                    </li>
+                    <li>
+                        <a data-auto-id="link-to-memories" href="pages/memories" class="">Memories</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="Timer">
+            <h2>C O U N T D O W N</h2>
+            <p id="timer"></p>
+        </div>
+
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Nov 17, 2025 11:30:00").getTime();
+            
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+            
+              // Get today's date and time
+              var now = new Date().getTime();
+                
+              // Find the distance between now and the count down date
+              var distance = countDownDate - now;
+                
+              // Time calculations for days, hours, minutes and seconds
+              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+              // Output the result in an element with id="demo"
+              document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+              + minutes + "m " + seconds + "s ";
+                
+              // If the count down is over, write some text 
+              if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "EXPIRED";
+              }
+            }, 1000);
+            </script>
+</body>
+</html>
